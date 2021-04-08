@@ -11,7 +11,9 @@ require('./routes/bookRoutes')(app);
 mongoose.Promise = global.Promise;
 mongoose.connect(data.mongoURI, {useNewUrlParser: true});
 app.use(bodyParser.json());
-
+app.get('/', (req, res)=>{
+   res.send("Welcome!");
+})
 app.listen(port, ()=>{
    console.log(`Example app listening at http://localhost:${port}`);
 });
