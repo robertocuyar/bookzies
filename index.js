@@ -1,13 +1,17 @@
 const express = require('express');
-const app = express();
+
 const port = 5000;
- require('./routes/bookRoutes')(app);
-app.get('/', (req, res)=> {
-   res.send('Hello World!');
-});
-app.get("/example", (req, res)=>{
-    res.send('This is an example.')
-})
+const mongoose = require('mongoose');
+const data = require('./config/dev');
+const bodyParser = require('body-parser');
+const app = express();
+require('./models/Book');
+require('./routes/bookRoutes')(app);
+
+mongoose.Promise = global.Promise;
+mongoose.connect(data.mongoURI, {useNewUrlParser: true});
+app.use(bodyParser.json());
+
 app.listen(port, ()=>{
    console.log(`Example app listening at http://localhost:${port}`);
 });
