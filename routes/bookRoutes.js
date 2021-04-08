@@ -11,6 +11,6 @@ module.exports = app => {
             }
 
         }).limit(20);
-        res.json(books);
+        await res.json(books);
     });
 }
