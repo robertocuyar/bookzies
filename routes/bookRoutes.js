@@ -10,7 +10,7 @@ module.exports = app => {
                 $search: req.query.q
             }
 
-        }).limit(20);
+        }).limit(10);
         await res.json(books);
     });
 }
