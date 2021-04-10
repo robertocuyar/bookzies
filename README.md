@@ -13,7 +13,7 @@ Development mode runs at:
 [http://localhost:5000](http://localhost:5000)
 
 ### Deployment
-Deployed access using heroku at:
+Deployed access using Heroku at:
 [https://bookzies.herokuapp.com](https://bookzies.herokuapp.com)
 
 ### Dependencies
