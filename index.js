@@ -16,8 +16,8 @@ mongoose.connect(data.mongoURI, {useNewUrlParser: true});
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send("Welcome!");
+    res.send("Server Online.");
 })
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`Bookzies server listening at http://localhost:${port}`);
 });
