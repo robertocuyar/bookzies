@@ -12,7 +12,7 @@ require('./models/Book');
 require('./routes/bookRoutes')(app);
 
 mongoose.Promise = global.Promise;
-mongoose.connect(data.mongoURI, {useNewUrlParser: true});
+mongoose.connect(data.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
