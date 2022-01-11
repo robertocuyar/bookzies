@@ -12,12 +12,11 @@ app.use((req, res, next) => {
 })
 require('./models/Book');
 require('./routes/bookRoutes')(app);
-try {
-    mongoose.Promise = global.Promise;
-    mongoose.connect(data.mongoURI, {useNewUrlParser: true}).then(() => console.log('Mongoose connected.'));
-} catch (e) {
-   console.error(`Mongoose connection problem: ${e}`);
-}
+    mongoose.connect(data.mongoURI, null, (err)=> {
+      if (err) {
+          console.error(err);
+      }
+    });
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
